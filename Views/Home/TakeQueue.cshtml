@@ -1,0 +1,22 @@
+@model RegisterViewModel
+
+<div class="container take-queue">
+    <h3 class="mb-4">Ro'yhatdan o'tish</h3>
+    <form class="form-signin" method="post" asp-action="TakeQueue" asp-controller="Home">
+        <div class="form-label-group mb-4">
+            <input asp-for="Fullname" type="text" id="Fullname" class="form-control" placeholder="" required="">
+            <label class="text-muted mb" asp-for="Fullname" for="Fullname"></label>
+            <span asp-validation-for="Fullname" class="text-danger"></span>
+        </div>
+
+        <div class="form-label-group mb-4">
+            <input asp-for="Phone" type="tel" id="Phone" class="form-control" placeholder="" required="">
+            <label class="text-muted" asp-for="Phone" for="Phone"></label>
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+        
+        <div class="row mx-auto">
+            <button class="btn btn-lg btn-success" type="submit">Navbat olish</button>
+        </div>
+    </form>
+</div>

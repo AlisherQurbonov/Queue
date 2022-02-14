@@ -1,31 +1,25 @@
-﻿@model RegisterViewModel
+﻿@model RegisterListViewModel
 
-<table class="table-primary">
+<table class="table table-dark shadow mt-5 mb-3 border border-5 border-light rounded-3">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Ism Sharifingiz</th>
+      <th scope="col">Telefon Raqamingiz</th>
+      <th scope="col">Navbat olgan vaqtingiz</th>
+      <th scope="col">Navbatingiz keladigan vaqt</th>
     </tr>
   </thead>
   <tbody>
-    <tr class="table-secondary">
-      <th scope="row">1</th>
-      <td class="table-primary">Mark</td>
-      <td>Otto</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td></td>
-    </tr>
+     @foreach(var user in Model.Registers)
+        {
+            
+                <tr>
+                    <td>@user.Fullname</td>
+                    <td>(XX) XXX XX @user.Phone.Substring(user.Phone.Length - 2)</td>
+                    <td>@user.CreatedAt.ToString("MMM dd, yyyy HH:mm")</td>
+                    <td>@user.Queue.ToString("MMM dd, yyyy HH:mm")</td>
+                </tr>
+            
+        }
   </tbody>
 </table>
